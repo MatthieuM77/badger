@@ -48,8 +48,8 @@ function card(a) {
   else if (!p.known) summary = el('p', { class: 'muted' }, a.auth ? 'Add a token to measure this one.' : 'Could not be measured.');
   else if (p.maxed) summary = el('p', { class: 'done' }, `${a.value} ${a.unit} — all tiers reached 🎉`);
   else summary = el('p', {}, el('strong', {}, String(a.value)), ` ${a.unit}`, el('br'),
-    ...(a.tiers.length === 1
-      ? [`${p.remaining} more to unlock`]
+    ...(a.tiers.length === 1 || p.level === -1
+      ? [`${p.remaining} more to unlock`, a.tiers.length > 1 ? ` (${p.next})` : '']
       : [`${p.remaining} more for `, el('strong', {}, TIER_NAMES[p.level + 1]), ` (${p.next})`]));
 
   const badge = p.known && p.level >= 0
