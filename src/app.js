@@ -72,12 +72,29 @@ function card(a) {
   );
 }
 
+function shareButton(login) {
+  const url = new URL(location.pathname, location.origin);
+  url.searchParams.set('user', login);
+  const btn = el('button', { type: 'button', class: 'secondary' }, 'Copy share link');
+  btn.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(url.href);
+      btn.textContent = 'Copied ✓';
+    } catch {
+      prompt('Copy this link:', url.href);
+    }
+    setTimeout(() => { btn.textContent = 'Copy share link'; }, 2000);
+  });
+  return btn;
+}
+
 function render({ user, metrics, topRepo, warnings }) {
   profile.replaceChildren(
     el('img', { src: user.avatar_url, alt: '', width: 56, height: 56 }),
     el('div', {},
       el('h2', {}, el('a', { href: user.html_url, target: '_blank', rel: 'noopener' }, user.name || user.login)),
       el('p', { class: 'muted small' }, `@${user.login}`, topRepo ? ` · top repo: ${topRepo}` : '')),
+    shareButton(user.login),
   );
   profile.hidden = false;
   grid.replaceChildren(...evaluate(metrics).map(card));
