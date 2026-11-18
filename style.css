@@ -31,6 +31,8 @@ button { padding: 10px 18px; font: inherit; font-weight: 600; color: var(--accen
 #profile img { border-radius: 50%; border: 1px solid var(--border); }
 #profile h2 { margin: 0; font-size: 1.25rem; }
 #profile p { margin: 0; }
+#profile > div { flex: 1; min-width: 0; }
+button.secondary { color: var(--text); background: var(--surface); border: 1px solid var(--border); font-size: 0.875rem; padding: 6px 12px; }
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
 .card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 10px; }
 .card-head { display: flex; gap: 12px; align-items: flex-start; }
