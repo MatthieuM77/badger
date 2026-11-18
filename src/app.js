@@ -10,7 +10,7 @@ const grid = $('#grid');
 const profile = $('#profile');
 
 const DEMO = {
-  user: { login: 'octocat', name: 'Demo user', avatar_url: 'https://github.com/octocat.png', html_url: 'https://github.com/octocat' },
+  user: { login: 'octocat', name: 'Demo user', avatar_url: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23ddf4ff'/><text x='50' y='68' font-size='56' text-anchor='middle'>🦡</text></svg>", html_url: 'https://github.com/octocat' },
   metrics: { maxStars: 92, mergedPRs: 21, coauthoredCommits: 6, acceptedAnswers: 3, sponsoring: 0 },
   topRepo: 'octocat/hello-world',
   warnings: [],
