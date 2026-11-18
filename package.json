@@ -1,0 +1,12 @@
+{
+  "name": "badger",
+  "version": "0.1.0",
+  "description": "See how close you are to every GitHub profile achievement.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "node --test test/",
+    "start": "npx --yes serve ."
+  },
+  "license": "MIT"
+}
