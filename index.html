@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>badger · GitHub achievement progress</title>
+  <meta name="description" content="See how close you are to every GitHub profile achievement: Starstruck, Pull Shark, Pair Extraordinaire, Galaxy Brain and more.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦡</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="wrap">
+    <h1><span aria-hidden="true">🦡</span> badger</h1>
+    <p class="tagline">How close are you to every GitHub achievement?</p>
+    <form id="lookup" autocomplete="off">
+      <label class="sr-only" for="login">GitHub username</label>
+      <input id="login" name="login" placeholder="GitHub username" required spellcheck="false" autocapitalize="off">
+      <button type="submit">Check</button>
+    </form>
+    <details class="token">
+      <summary>Add a token for Galaxy Brain, Public Sponsor and higher rate limits</summary>
+      <p>Create a <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">fine-grained token</a> with no permissions (public data only). It stays in this browser tab and is only sent to api.github.com.</p>
+      <label class="sr-only" for="token">Personal access token</label>
+      <input id="token" type="password" placeholder="github_pat_…" spellcheck="false">
+    </details>
+  </header>
+
+  <main class="wrap">
+    <p id="status" role="status" aria-live="polite"></p>
+    <section id="profile" hidden></section>
+    <section id="grid" class="grid"></section>
+  </main>
+
+  <footer class="wrap">
+    <p>Numbers come from the public GitHub API and can differ slightly from what GitHub counts. Achievements unlock on GitHub's side, sometimes hours later.
+    · <a href="https://github.com/MatthieuM77/badger">Source on GitHub</a></p>
+  </footer>
+
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>
